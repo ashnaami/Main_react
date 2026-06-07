@@ -37,18 +37,17 @@ function Profile() {
     }
   }
 
-  useEffect(() => {
-    if (data?.posts?.length > 0) {
-      data.posts.forEach(async (post) => {
-        const postComments = await fetchComments(post.id)
+      useEffect(() => {
+      const storedUser = localStorage.getItem("user")
+      if (!storedUser) return
 
-        setCommentsMap((prev) => ({
-          ...prev,
-          [post.id]: postComments,
-        }))
-      })
-    }
-  }, [data])
+      const user = JSON.parse(storedUser)
+
+      axios
+        .get(`https://main-django.onrender.com/api/profile/${user.id}/`)
+        .then((res) => setData(res.data))
+        .catch((err) => console.log(err))
+    }, [])
 
   // ✅ DELETE POST FUNCTION
   const handleDelete = async (id) => {
@@ -115,7 +114,7 @@ function Profile() {
                 {commentsMap[post.id]?.length > 0 ? (
                   commentsMap[post.id].map((c) => (
                     <div key={c.id} className="bg-gray-100 p-2 rounded mt-1">
-                      {c.comments}
+                      {c.comment}
                     </div>
                   ))
                 ) : (
