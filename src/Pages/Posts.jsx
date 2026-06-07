@@ -12,7 +12,7 @@ function Posts() {
   const fetchPosts = async () => {
     try {
       const response = await axios.get(
-        "http://127.0.0.1:8000/api/viewpost/"
+        "https://main-django.onrender.com/api/viewpost/"
       )
 
       setPosts(response.data)
@@ -39,7 +39,7 @@ function Posts() {
           <div className="bg-white rounded-xl shadow-lg p-4 hover:shadow-2xl transition duration-300 cursor-pointer">
 
             <img
-              src={`http://127.0.0.1:8000${post.image}`}
+              src={`https://main-django.onrender.com${post.image}`}
               alt={post.title}
               className="w-full h-56 object-cover rounded-lg"
             />

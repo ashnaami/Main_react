@@ -23,7 +23,7 @@ function CreatePost() {
     if (image) postdata.append("image", image);
 
     try {
-      await axios.post("http://127.0.0.1:8000/api/addpost/", postdata, {
+      await axios.post("https://main-django.onrender.com/api/addpost/", postdata, {
         headers: { "Content-Type": "multipart/form-data" },
       });
 

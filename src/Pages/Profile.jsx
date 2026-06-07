@@ -20,7 +20,7 @@ function Profile() {
     }
 
     axios
-      .get(`http://127.0.0.1:8000/api/profile/${user.id}/`)
+      .get(`https://main-django.onrender.com/api/profile/${user.id}/`)
       .then((res) => setData(res.data))
       .catch((err) => console.log(err))
   }, [user, navigate])
@@ -29,7 +29,7 @@ function Profile() {
   const fetchComments = async (postId) => {
     try {
       const res = await axios.get(
-        `http://127.0.0.1:8000/api/viewcmmt/${postId}/`
+        `https://main-django.onrender.com/api/viewcmmt/${postId}/`
       )
       return res.data || []
     } catch (err) {
@@ -56,7 +56,7 @@ function Profile() {
     if (!confirmDelete) return
 
     try {
-      await axios.delete(`http://127.0.0.1:8000/api/deletepost/${id}/`)
+      await axios.delete(`https://main-django.onrender.com/api/deletepost/${id}/`)
 
       // remove from UI instantly
       setData((prev) => ({

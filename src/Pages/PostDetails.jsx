@@ -15,7 +15,7 @@ function PostDetails() {
   useEffect(() => {
 
     axios.get(
-      `http://127.0.0.1:8000/api/singlepost/${id}/`
+      `https://main-django.onrender.com/api/singlepost/${id}/`
     )
     .then((res) => setPost(res.data))
 
@@ -31,7 +31,7 @@ function PostDetails() {
       </div>
         {post.image && (
             <img
-                src={`http://127.0.0.1:8000${post.image}`}
+                src={`https://main-django.onrender.com${post.image}`}
                 alt={post.title}
                 className="w-full h-[500px] object-cover rounded-xl mb-8"
             />

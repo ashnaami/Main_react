@@ -9,7 +9,7 @@ function SearchBar() {
   const handleSearch = async () => {
     try {
       const res = await axios.get(
-        `http://127.0.0.1:8000/api/search/?category=${category}`
+        `https://main-django.onrender.com/api/search/?category=${category}`
       );
       setPosts(res.data);
     } catch (err) {

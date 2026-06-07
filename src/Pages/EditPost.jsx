@@ -17,7 +17,7 @@ function EditPost() {
 
   useEffect(() => {
     axios
-      .get(`http://127.0.0.1:8000/api/editedpost/${id}/`)
+      .get(`https://main-django.onrender.com/api/editedpost/${id}/`)
       .then((res) => {
         setTitle(res.data.title);
         setDescp(res.data.description);
@@ -45,7 +45,7 @@ function EditPost() {
 
     try {
       await axios.put(
-        `http://127.0.0.1:8000/api/editpost/${id}/`,
+        `https://main-django.onrender.com/api/editpost/${id}/`,
         formData
       );
 
@@ -77,7 +77,7 @@ function EditPost() {
 
               {existingImage && (
                 <img
-                  src={`http://127.0.0.1:8000${existingImage}`}
+                  src={`https://main-django.onrender.com${existingImage}`}
                   className="w-full h-64 object-cover rounded-xl"
                   alt="post"
                 />

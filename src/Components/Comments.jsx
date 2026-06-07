@@ -9,11 +9,11 @@ function Comments({ postId }) {
 
   const user = JSON.parse(localStorage.getItem("user"));
 
-  // 🔥 FETCH COMMENTS
+ 
   const fetchComments = async () => {
     try {
       const res = await axios.get(
-        `http://127.0.0.1:8000/api/viewcmmt/${postId}/`
+        `https://main-django.onrender.com/api/viewcmmt/${postId}/`
       );
 
       setComments(res.data || []);

@@ -11,7 +11,7 @@ function LikeButton({ postId }) {
 
   const fetchLikes = async () => {
     try {
-      const res = await axios.get(`http://127.0.0.1:8000/api/likecount/${postId}/`)
+      const res = await axios.get(`https://main-django.onrender.com/api/likecount/${postId}/`)
 
       setLikes(res.data.likes)
 
@@ -25,7 +25,7 @@ function LikeButton({ postId }) {
     try {
 
       await axios.post(
-        `http://127.0.0.1:8000/api/like/${postId}/`,
+        `https://main-django.onrender.com/api/like/${postId}/`,
         {
           user: 1
         }
