@@ -46,7 +46,7 @@ function Comments({ postId }) {
     try {
       setLoading(true);
 
-      await axios.post("http://127.0.0.1:8000/api/comments/", {
+      await axios.post("https://main-django.onrender.com/api/comments/", {
         post: postId,
         user: user.id,
         comments: comment
