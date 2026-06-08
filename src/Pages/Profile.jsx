@@ -108,19 +108,19 @@ function Profile() {
               </p>
 
               {/* COMMENTS */}
-              <div className="mt-3">
-                <h4 className="font-medium">Comments</h4>
+                  <div className="mt-3">
+                  <h4 className="font-medium">Comments</h4>
 
-                {commentsMap[post.id]?.length > 0 ? (
-                  commentsMap[post.id].map((c) => (
-                    <div key={c.id} className="bg-gray-100 p-2 rounded mt-1">
-                      {c.comments}
-                    </div>
-                  ))
-                ) : (
-                  <p className="text-sm text-gray-400">No comments</p>
-                )}
-              </div>
+                  {post.comments?.length > 0 ? (
+                    post.comments.map((c) => (
+                      <div key={c.id} className="bg-gray-100 p-2 rounded mt-1">
+                        {c.comment}
+                      </div>
+                    ))
+                  ) : (
+                    <p className="text-sm text-gray-400">No comments</p>
+                  )}
+                </div>
 
               {/* BUTTONS */}
               <div className="flex gap-3 mt-4">
