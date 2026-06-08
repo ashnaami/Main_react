@@ -114,7 +114,7 @@ function Profile() {
                 {commentsMap[post.id]?.length > 0 ? (
                   commentsMap[post.id].map((c) => (
                     <div key={c.id} className="bg-gray-100 p-2 rounded mt-1">
-                      {c.comment}
+                      {c.comments}
                     </div>
                   ))
                 ) : (
